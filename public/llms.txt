@@ -1,0 +1,46 @@
+# SharpXstudios
+
+> SharpXstudios is a web development and AI automation agency based in Bangalore, India, serving businesses in RR Nagar, Rajarajeshwari Nagar, across Bangalore, and worldwide.
+
+## Website
+https://www.sharpxstudios.com/
+
+## Services
+
+- Web Development
+- Next.js Development
+- React Development
+- Ecommerce Development
+- AI Automation
+- AI Agents
+- Business Workflow Automation
+- SEO
+- Digital Marketing
+- UI/UX Design
+- Graphic Design
+- AEO/GEO
+
+## Location
+
+SharpXstudios is based in Bangalore, Karnataka, India, and serves businesses in RR Nagar, Rajarajeshwari Nagar, and across Bangalore.
+
+## Web Development
+
+SharpXstudios builds modern, responsive websites and web applications using technologies including React and Next.js.
+
+## AI Automation
+
+SharpXstudios develops AI-powered automation systems, AI agents, and workflow automations to help businesses reduce repetitive tasks and improve operations.
+
+## Service Area
+
+Bangalore, Karnataka, India
+RR Nagar
+Rajarajeshwari Nagar
+Worldwide / Remote
+
+## Contact
+
+Website: https://www.sharpxstudios.com/
+Instagram: https://www.instagram.com/sharpxstudios
+LinkedIn: https://www.linkedin.com/company/sharpxstudios
