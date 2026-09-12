@@ -19,9 +19,12 @@ const schema = {
     |--------------------------------------------------------------------------
     | Core Organization Entity
     |--------------------------------------------------------------------------
+    | Note: "founder" removed intentionally to keep the owner's personal name
+    | out of page source / Rich Results — flagged as a privacy concern earlier.
+    | Re-add only if you're fine with your name being publicly discoverable.
     */
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "@id": `${siteUrl}/#organization`,
       name: "SharpXstudios",
       legalName: "SharpXstudios",
@@ -38,15 +41,16 @@ const schema = {
       },
       foundingDate: "2026",
       slogan: "Built to perform, not just look good.",
+      // Description now matches what the homepage actually says (small/local
+      // businesses, not "modern enterprises") to avoid schema/content mismatch.
       description:
-        "SharpXstudios is a digital agency headquartered in Bangalore specializing in custom web development, AI automation workflows, UI/UX design, and generative search optimization.",
-      founder: {
-        "@type": "Person",
-        name: "Sharan P",
-        jobTitle: "Founder",
-      },
+        "SharpXstudios is an in-house web development and AI automation studio based in Bangalore, building websites, AI automation systems, and AEO/GEO-ready growth for small and local businesses.",
       address: {
         "@type": "PostalAddress",
+        // TODO: replace with a real, specific address (e.g. a coworking/virtual
+        // office in RR Nagar) if you want stronger local-pack ranking. Leaving
+        // this at city-level only is the safer default for now given the
+        // privacy concern you raised.
         addressLocality: "Bangalore",
         addressRegion: "Karnataka",
         addressCountry: "IN",
@@ -62,22 +66,10 @@ const schema = {
         },
       },
       areaServed: [
-        {
-          "@type": "City",
-          name: "Bangalore",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Rajarajeshwari Nagar (RR Nagar)",
-        },
-        {
-          "@type": "Place",
-          name: "West Bangalore",
-        },
-        {
-          "@type": "Country",
-          name: "India",
-        },
+        { "@type": "City", name: "Bangalore" },
+        { "@type": "AdministrativeArea", name: "Rajarajeshwari Nagar (RR Nagar)" },
+        { "@type": "Place", name: "West Bangalore" },
+        { "@type": "Country", name: "India" },
       ],
       sameAs: [
         "https://www.instagram.com/sharpxstudios",
@@ -102,6 +94,55 @@ const schema = {
         areaServed: "IN",
         availableLanguage: ["English", "Kannada", "Hindi"],
       },
+      // Reflects your actual published pricing tiers (Starter/Business/Custom).
+      priceRange: "₹19,999 – ₹39,999+",
+      // Built from your real, visible testimonials (5 reviews, avg ~4.84).
+      // Update the values here whenever you add/remove real client reviews —
+      // never leave this out of sync with what's shown on the page.
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Mithun" },
+          reviewRating: { "@type": "Rating", ratingValue: "4.8", bestRating: "5" },
+          reviewBody:
+            "The team understood what we were trying to achieve and turned it into a website that feels professional, modern, and true to our brand. Communication was smooth throughout the project.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Vivek" },
+          reviewRating: { "@type": "Rating", ratingValue: "5.0", bestRating: "5" },
+          reviewBody:
+            "We wanted a stronger online presence without losing the personality of our restaurant. The team made the process simple and delivered a website that represents our brand beautifully.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Sakshi Singh" },
+          reviewRating: { "@type": "Rating", ratingValue: "4.9", bestRating: "5" },
+          reviewBody:
+            "From the initial discussions to the final launch, the team was responsive and thoughtful. They took the time to understand our requirements and delivered a polished digital experience.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Neha Patel" },
+          reviewRating: { "@type": "Rating", ratingValue: "4.8", bestRating: "5" },
+          reviewBody:
+            "What stood out was their ability to combine design with usability. The final product looks great, but more importantly, it is easy for our customers to navigate and interact with.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Ravi Nair" },
+          reviewRating: { "@type": "Rating", ratingValue: "4.7", bestRating: "5" },
+          reviewBody:
+            "The team brought a clear process to the project and was open to feedback at every stage. The result was a clean, professional website that gives our business a much stronger digital presence.",
+        },
+      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Core Digital Engineering Services",
@@ -176,15 +217,19 @@ const schema = {
     |--------------------------------------------------------------------------
     | Primary WebPage Entity
     |--------------------------------------------------------------------------
+    | headline/description rewritten to match the actual homepage copy
+    | ("We help businesses grow in the digital world" — small/local business
+    | audience) instead of the previous "modern enterprises" framing, which
+    | didn't match anything visible on the page.
     */
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: "Web Development & AI Automation Agency in Bangalore | SharpXstudios",
-      headline: "Fast, Intelligent Websites & AI Automation Built to Perform",
+      name: "Web Development & AI Automation Agency in RR Nagar Bangalore | SharpXstudios",
+      headline: "We help businesses grow in the digital world.",
       description:
-        "SharpXstudios builds high-performance web systems, custom AI automations, and GEO strategies for modern enterprises.",
+        "SharpXstudios builds high-performance websites, AI automation systems, and AEO/GEO-ready growth strategies for small and local businesses in Bangalore.",
       isPartOf: {
         "@id": `${siteUrl}/#website`,
       },
@@ -228,9 +273,11 @@ export const metadata = {
     "AEO agency Bangalore",
     "GEO agency Bangalore",
   ],
+  // Author changed from a personal name to the business name to avoid
+  // publicly exposing the owner's identity in page metadata.
   authors: [
     {
-      name: "Sharan P",
+      name: "SharpXstudios",
     },
   ],
   creator: "SharpXstudios",
