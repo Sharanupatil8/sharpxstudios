@@ -1,10 +1,11 @@
-// app/interior-designers/layout.js
+// app/interior-design-growth-partners-bangalore/layout.js
 
 import InteriorNavbar from "../_components/interior-growth-partner-components/InteriorNav";
+import Tourmusic from "../_components/interior-growth-partner-components/Tourmusic";
+import Preloader from "../_components/Preloader";
 
 export const metadata = {
-  title:
-    "Digital Marketing Agency for Interior Designers in Bangalore | SharpXstudios",
+  title: "Interior Design Marketing Agency in Bangalore | SharpXstudios",
 
   description:
     "Grow your interior design business with website design, local SEO, Google Business Profile optimisation, Google Ads, social media marketing and AI lead generation in Bangalore. Get more qualified interior design enquiries with SharpXstudios.",
@@ -27,7 +28,8 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.sharpxstudios.com/interior-designers",
+    canonical:
+      "https://www.sharpxstudios.com/interior-design-growth-partners-bangalore",
   },
 
   openGraph: {
@@ -37,7 +39,7 @@ export const metadata = {
     description:
       "Get more interior design enquiries with a high-converting website, local SEO, Google Ads, social media marketing and AI lead automation.",
 
-    url: "https://www.sharpxstudios.com/interior-designers",
+    url: "https://www.sharpxstudios.com/interior-design-growth-partners-bangalore",
     siteName: "SharpXstudios",
     type: "website",
   },
@@ -56,7 +58,7 @@ export default function InteriorDesignersLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "SharpXstudios",
-    url: "https://www.sharpxstudios.com/interior-designers",
+    url: "https://www.sharpxstudios.com/interior-design-growth-partners-bangalore",
 
     description:
       "SharpXstudios helps interior designers and architects in Bangalore grow through website design, SEO, Google Business Profile optimisation, Google Ads, social media marketing, lead generation and AI lead automation.",
@@ -96,6 +98,10 @@ export default function InteriorDesignersLayout({ children }) {
       <InteriorNavbar />
 
       {children}
+      <Tourmusic
+        musicSrc="/calm-piano-violin.mp3"
+        whatsappNumber="+918050923077"
+      />
     </>
   );
 }
